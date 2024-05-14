@@ -29,8 +29,9 @@ class LocationAdd extends Command
     {
         Log::info("Add new location to map");
         $owm = new OpenWeatherMap();
-        $data = $owm->getDirect('Limassol,Cyprus')->json()[0];
-        Log::debug('Location', [$data['name'], $data['state'], $data['country'], $data['lat'], $data['lon']]);
+        $data = $owm->getDirect($this->argument('location'))->json()[0];
+        Log::debug('Location', [$data['name'] . ', '. $data['country'], $data['lat'], $data['lon']]);
+
 
     }
 }
