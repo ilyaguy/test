@@ -13,40 +13,7 @@ class WeatherController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Weather $weather)
-    {
-        Log::debug("Aaaaaaaa!!!", [__FILE__, __LINE__]);
-        Log::debug('data', [$weather]);
-        dd([$weather]);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Weather $weather)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Weather $weather)
-    {
-        //
+        Log::debug('here!');
+        echo "Here!";
     }
 }
