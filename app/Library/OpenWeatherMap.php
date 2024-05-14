@@ -22,6 +22,8 @@ class OpenWeatherMap
     {
         // https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
 
+        return $this->callApi('data/2.5/weather', 'lat='.$location->lat.'&lon='.$location->lon);
+
     }
 
     private function callApi($method, $data)

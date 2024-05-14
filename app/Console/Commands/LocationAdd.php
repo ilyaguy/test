@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Location;
 use App\Library\OpenWeatherMap;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
@@ -27,11 +28,14 @@ class LocationAdd extends Command
      */
     public function handle()
     {
-        Log::info("Add new location to map");
         $owm = new OpenWeatherMap();
         $data = $owm->getDirect($this->argument('location'))->json()[0];
-        Log::debug('Location', [$data['name'] . ', '. $data['country'], $data['lat'], $data['lon']]);
 
-
+        $location = new Location();
+        $location->city = $data['name'] . ', '. $data['country'];
+        $location->lat = $data['lat'];
+        $location->lon = $data['lon'];
+        $location->save();
+        Log::info("Added new location to map", [$location->city, $location->lat, $location->lon]);
     }
 }
