@@ -1,0 +1,23 @@
+* [33%] Weather data project
+** DONE Init Laravel
+CLOSED: [2024-05-16 Tue 16:11]
+- PHP v8.3.7
+- Laravel v11.7.0
+- MySQL
+** INPROGRESS [0/2] Import data
+*** INPROGRESS Check last updated data
+*** TODO Load data if data is absent or too old.
+** TODO Import data
+*** TODO Sever import data
+*** TODO Calculate data
+* [0%] [0/9] Documentation
+** TODO Step by step working process
+** TODO Simple interface enough to work and test
+** TODO Database structure description
+** TODO Codebase is accepted for SOLID
+** TODO Use transactions in the DB
+** TODO Log messages (info + error)
+** TODO Description for finished and unfinished tasks
+** TODO Manual how to run project
+** TODO 60+% test coverage
+
