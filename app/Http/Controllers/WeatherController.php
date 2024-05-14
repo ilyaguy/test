@@ -13,7 +13,8 @@ class WeatherController extends Controller
      */
     public function index()
     {
-        Log::debug('here!');
-        echo "Here!";
+        $row = Weather::orderBy('location_id', 'desc')->orderBy('id', 'desc')->first();
+
+        return $row->info;
     }
 }
