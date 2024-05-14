@@ -2,7 +2,9 @@
 
 namespace App\Console\Commands;
 
-use App\Jobs\WeatherUpdateJob;
+use App\Models\Location;
+use App\Models\Weather;
+use App\Library\OpenWeatherMap;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
 
@@ -27,7 +29,14 @@ class WeatherUpdate extends Command
      */
     public function handle()
     {
-        Log::info('WeatherUpdate');
-
+        $owm = new OpenWeatherMap();
+        foreach (Location::all() as $location) {
+            $weather = $owm->getWeather($location);
+            Log::info('Update weather info', [$location->name, $weather]);
+            $weather = new Weather;
+            $weather->location_id = $location->id;
+            $weather->info = $weather;
+            $weather->save();
+        }
     }
 }

@@ -29,7 +29,7 @@ class LocationAdd extends Command
     public function handle()
     {
         $owm = new OpenWeatherMap();
-        $data = $owm->getDirect($this->argument('location'))->json()[0];
+        $data = $owm->getDirect($this->argument('location'));
 
         $location = new Location();
         $location->city = $data['name'] . ', '. $data['country'];
