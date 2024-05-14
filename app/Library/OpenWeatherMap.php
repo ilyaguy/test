@@ -21,7 +21,6 @@ class OpenWeatherMap
     public function getWeather($location)
     {
         return $this->callApi('data/2.5/weather', 'lat='.$location->lat.'&lon='.$location->lon);
-
     }
 
     private function callApi($method, $data)

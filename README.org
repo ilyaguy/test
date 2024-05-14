@@ -1,4 +1,4 @@
-*  Weather data project [66%]
+*  Weather data project [100%]
 ** DONE Init Laravel
 CLOSED: [2024-05-16 Tue 16:11]
 - PHP v8.3.7
@@ -15,26 +15,30 @@ CLOSED: [2024-05-14 Tue 12:09]
 CLOSED: [2024-05-14 Tue 17:49]
 - CLOSING NOTE [2024-05-14 Tue 17:49] \\
   Done
-** INPROGRESS Import data
-*** INPROGRESS Import weather data
+** DONE Import data
+CLOSED: [2024-05-14 Tue 22:45]
+*** DONE Import weather data
+CLOSED: [2024-05-14 Tue 22:45]
 **** DONE OpenWatherApi key
-**** TODO Make request to OpenWeatherApi
+**** DONE Make request to OpenWeatherApi
+CLOSED: [2024-05-14 Tue 22:44]
 - Search OWApi extended data for requested town after user add location
 - Save searched data about map info
-**** TODO Save received data to database
+**** DONE Save received data to database
+CLOSED: [2024-05-14 Tue 22:44]
   - 
-*** TODO Sever import data
-*** TODO Calculate data
-* Documentation [0%] [0/9] 
+*** DONE Sever import data
+CLOSED: [2024-05-14 Tue 22:45]
+*** DONE Calculate data
+CLOSED: [2024-05-14 Tue 22:45]
+* Documentation [11%] [1/9] 
 ** TODO Step by step working process
 ** TODO Simple interface enough to work and test
 ** TODO Database structure description
 ** TODO Codebase is accepted for SOLID
 ** TODO Use transactions in the DB
-** INPROGRESS Log messages (info + error)
-   - log some `info` data
-	 - WeatherUpdate
-   - log some `error` data
+** DONE Log messages (info + error)
+CLOSED: [2024-05-14 Tue 22:51]
 ** TODO Description for finished and unfinished tasks
 ** TODO Manual how to run project
 ** TODO 60+% test coverage
