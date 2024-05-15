@@ -31,9 +31,7 @@ class LocationAdd extends Command
         try {
             $location = new Location();
             $owm = new OpenWeatherMap();
-
             $data = $owm->getDirect($this->argument('location'));
-
             $location->city = $data['name'] . ', '. $data['country'];
             $location->lat = $data['lat'];
             $location->lon = $data['lon'];

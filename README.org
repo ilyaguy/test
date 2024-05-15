@@ -31,15 +31,41 @@ CLOSED: [2024-05-14 Tue 22:44]
 CLOSED: [2024-05-14 Tue 22:45]
 *** DONE Calculate data
 CLOSED: [2024-05-14 Tue 22:45]
-* Documentation [11%] [1/9] 
-** TODO Step by step working process
-** TODO Simple interface enough to work and test
-** TODO Database structure description
-** TODO Codebase is accepted for SOLID
+* Documentation [66%] [6/9] 
+** INPROGRESS Step by step working process
+** DONE Simple interface enough to work and test
+CLOSED: [2024-05-14 Tue 23:30]
+- Used opensource code, but need to pay for data.
+** DONE Database structure description
+CLOSED: [2024-05-14 Tue 23:21]
+*** Weathers
+    - *id* bigint unsigned NOT NULL AUTO_INCREMENT
+	- *location_id* bigint
+	- *info* long text
+*** Locations
+    - *id* bigint unsigned NOT NULL AUTO_INCREMENT,
+	- *city* varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+	- *lat* double NOT NULL
+	- *lon* double NOT NULL
+	 
+** DONE Codebase is accepted for SOLID
+CLOSED: [2024-05-14 Tue 23:31]
+- CLOSING NOTE [2024-05-14 Tue 23:31] \\
+  I hope
 ** TODO Use transactions in the DB
 ** DONE Log messages (info + error)
 CLOSED: [2024-05-14 Tue 22:51]
-** TODO Description for finished and unfinished tasks
-** TODO Manual how to run project
-** TODO 60+% test coverage
-
+** DONE Description for finished and unfinished tasks
+CLOSED: [2024-05-14 Tue 23:25]
+- Not implemented multiuser loaded and show data.
+- Too much time used for basic Laravel init.
+** DONE Manual how to run project
+CLOSED: [2024-05-14 Tue 23:25]
+1. Get releace of project from GIT
+2. Build docker containe
+3. Create account for OpenWeather site:
+   1) register on web site https://openweathermap.org/
+   2) create account on https://home.openweathermap.org/api_keys
+   3) put API key for authorization in to `.env` and related variable name:
+4. Run (project and tests)
+** INPROGRESS 60+% test coverage

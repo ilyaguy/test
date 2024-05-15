@@ -14,10 +14,6 @@ class WeatherController extends Controller
     public function index()
     {
         $row = Weather::orderBy('location_id', 'desc')->orderBy('id', 'desc')->first();
-        if (count($row->info) < 1) {
-            Log::error('No data imported');
-            return "No data loaded";
-        }
 
         return $row->info;
     }
