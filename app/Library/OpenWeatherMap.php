@@ -15,7 +15,7 @@ class OpenWeatherMap
 
     public function getDirect(string $location)
     {
-        return ($this->callApi('geo/1.0/direct', 'q=' . $location))->json()[0];
+        return ($this->callApi('geo/1.0/direct', 'q=' . $location));
     }
 
     public function getWeather($location)
@@ -25,6 +25,6 @@ class OpenWeatherMap
 
     private function callApi($method, $data)
     {
-        return Http::get($this->url . $method . '?appid=' . $this->key . '&' . $data);//->json();
+        return Http::acceptJson()->get($this->url . $method . '?appid=' . $this->key . '&' . $data);
     }
 }

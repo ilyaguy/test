@@ -28,17 +28,7 @@ class LocationAdd extends Command
      */
     public function handle()
     {
-        try {
-            $location = new Location();
-            $owm = new OpenWeatherMap();
-            $data = $owm->getDirect($this->argument('location'));
-            $location->city = $data['name'] . ', '. $data['country'];
-            $location->lat = $data['lat'];
-            $location->lon = $data['lon'];
-            $location->save();
-            Log::info("Added new location to map", [$location->city, $location->lat, $location->lon]);
-        } catch (Exception $ex) {
-            Log::error($ex->getMessage());
-        }
+        $location = new Location();
+        $location->create($this->argument('location'));
     }
 }
