@@ -19,19 +19,14 @@ class Location extends Model
 
     public function create($locationName)
     {
-        try {
-            $location = new Location();
-            $owm = new OpenWeatherMap();
-            $loadData = ($owm->getDirect($locationName))[0];
-            $location->city = $loadData['name'] . ', '. $loadData['country'];
-            $location->lat = $loadData['lat'];
-            $location->lon = $loadData['lon'];
-            $location->save();
-            Log::info("Added new location to map", [$location->city, $location->lat, $location->lon]);
-            return $location;
-        } catch (Exception $ex) {
-            Log::error($ex->getMessage());
-            return false;
-        }
+        $location = new Location();
+        $owm = new OpenWeatherMap();
+        $loadData = ($owm->getDirect($locationName))[0];
+        $location->city = $loadData['name'] . ', '. $loadData['country'];
+        $location->lat = $loadData['lat'];
+        $location->lon = $loadData['lon'];
+        $location->save();
+        Log::info("Added new location to map", [$location->city, $location->lat, $location->lon]);
+        return $location;
     }
 }
