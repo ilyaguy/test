@@ -5,14 +5,11 @@
          colors="true"
 		 cacheResult="true"
 		 cacheResultFile=".phpunit.cache/test-results"
-		 executionOrder="defects,depends"
 		 beStrictAboutOutputDuringTests="true"
 		 beStrictAboutTodoAnnotatedTests="true"
-		 convertDeprecationsToExceptions="true"
 		 failOnRisky="true"
 		 failOnWarning="true"
 		 processIsolation="true"
-		 verbose="true"
 		 >
   <testsuites>
     <testsuite name="Unit">
@@ -49,7 +46,7 @@
   <logging>
 	<testdoxHtml outputFile="./storage/logs/testdox.html"/>
   </logging>
-  <coverage addUncoveredFiles="true" processUncoveredFiles="false">
+  <coverage>
 	<report>
 	  <clover outputFile="./storage/logs/clover.xml"/>
 	  <html outputDirectory="./storage/logs/coverage"/>
