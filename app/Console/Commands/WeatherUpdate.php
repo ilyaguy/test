@@ -29,18 +29,11 @@ class WeatherUpdate extends Command
      */
     public function handle()
     {
+        $result = [];
         $owm = new OpenWeatherMap();
         foreach (Location::all() as $location) {
-            try {
-                $weather = $owm->getWeather($location, '');
-                Log::info('Update weather info', [$location, $weather]);
-                $weatherData = new Weather;
-                $weatherData->location_id = $location->id;
-                $weatherData->info = $weather; // json_encode($weather);
-                $weatherData->save();
-            } catch (Execute $ex) {
-                Log::error($ex->getMessage());
-            }
+            $result[] = $location->updateWeather($owm);
         }
+        return $result;
     }
 }

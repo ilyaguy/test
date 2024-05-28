@@ -17,16 +17,20 @@ class Location extends Model
         'lon',
     ];
 
+    protected OpenWeatherMap $map;
+
+    public function __construct(OpenWeatherMap $map)
+    {
+        $this->map = $map;
+    }
+
     public function create($locationName)
     {
-        $location = new Location();
-        $owm = new OpenWeatherMap();
-        $loadData = ($owm->getDirect($locationName))[0];
-        $location->city = $loadData['name'] . ', '. $loadData['country'];
-        $location->lat = $loadData['lat'];
-        $location->lon = $loadData['lon'];
-        $location->save();
-        Log::info("Added new location to map", [$location->city, $location->lat, $location->lon]);
-        return $location;
+        $loadData = $this->map->getDirect($locationName);
+        $this->city = $loadData[0]['name'] . ', '. $loadData[0]['country'];
+        $this->lat = $loadData[0]['lat'];
+        $this->lon = $loadData[0]['lon'];
+        Log::info("Added new location to map", [$this->city, $this->lat, $this->lon]);
+        return $this;
     }
 }
