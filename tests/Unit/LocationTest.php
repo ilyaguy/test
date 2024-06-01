@@ -14,7 +14,7 @@ class LocationTest extends TestCase
 
     public function test_check_if_location_is_empty(): void
     {
-        $location = new Location(new OpenWeatherMap());
+        $location = new Location();
         $this->assertEquals('', $location->city);
     }
 
@@ -26,8 +26,8 @@ class LocationTest extends TestCase
 
     public function test_check_if_location_is_completed(): void
     {
-        $location = new Location(new OpenWeatherMap());
-        $data = $location->create("Limassol, Cyprus");
+        $location = new Location();
+        $data = $location->create(new OpenWeatherMap(), "Limassol, Cyprus");
         $this->assertEquals('Limassol, CY', $data->city);
     }
 }

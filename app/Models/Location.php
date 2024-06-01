@@ -17,16 +17,9 @@ class Location extends Model
         'lon',
     ];
 
-    protected OpenWeatherMap $map;
-
-    public function __construct(OpenWeatherMap $map)
+    public function create(OpenWeatherMap $map, $locationName)
     {
-        $this->map = $map;
-    }
-
-    public function create($locationName)
-    {
-        $loadData = $this->map->getDirect($locationName);
+        $loadData = $map->getDirect($locationName);
         $this->city = $loadData[0]['name'] . ', '. $loadData[0]['country'];
         $this->lat = $loadData[0]['lat'];
         $this->lon = $loadData[0]['lon'];

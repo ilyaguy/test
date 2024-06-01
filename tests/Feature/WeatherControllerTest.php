@@ -20,7 +20,7 @@ class WeatherControllerTest extends TestCase
 
     public function test_weather_with_full_data(): void
     {
-        $x = [];
+        $x = "";
         // $x = ()->index('weather');
         $l = new WeatherController();
         Log::debug(__METHOD__, [$l]);

@@ -2,6 +2,7 @@
 
 namespace App\Library;
 
+use App\Models\Location;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
@@ -18,7 +19,7 @@ class OpenWeatherMap
         return ($this->callApi('geo/1.0/direct', 'q=' . $location));
     }
 
-    public function getWeather($location)
+    public function getWeather(Location $location)
     {
         return $this->callApi('data/2.5/weather', 'lat='.$location->lat.'&lon='.$location->lon);
     }

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Library\OpenWeatherMap;
+use App\Models\Location;
 use App\Models\Weather;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -13,12 +15,13 @@ class WeatherController extends Controller
      */
     public function index()
     {
-        $row = Weather::orderBy('location_id', 'desc')
-            ->orderBy('id', 'desc')
-            ->first();
+        $location = Location::first();
+        $map = new Weather();
+        $row = $map->loadMap(new OpenWeatherMap(), $location);
 
+        Log::debug(__METHOD__, [$row, $location]);
         if (!$row) {
-            return false;
+            return null;
         }
 
         return $row->info;

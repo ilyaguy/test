@@ -15,7 +15,7 @@ class WeatherTest extends TestCase
 
     public function test_check_if_location_is_completed(): void
     {
-        $location = (new Location(new OpenWeatherMap()))->create('Limassol, CY');
+        $location = (new Location())->create(new OpenWeatherMap(), 'Limassol, CY');
         $weather = new Weather();
         $data = $weather->loadMap(new OpenWeatherMap(), $location)->info;
         $this->assertEquals('Limassol', $data['name']);
