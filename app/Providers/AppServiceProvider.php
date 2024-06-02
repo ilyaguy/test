@@ -21,14 +21,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-/*        if (env('APP_DEBUG', false)) {
-            DB::listen(function ($query) {
-                Log::debug('SQL Query', [
-                    'sql' => $query->sql,
-                    'bindings' => $query->bindings,
-                    'time' => $query->time,
-                ]);
-            });
-    } */
+        //
     }
 }

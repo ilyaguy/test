@@ -17,7 +17,7 @@ class Location extends Model
         'lon',
     ];
 
-    public function create(OpenWeatherMap $map, $locationName)
+    public function create(OpenWeatherMap $map, string $locationName)
     {
         $loadData = $map->getDirect($locationName);
         $this->city = $loadData[0]['name'] . ', '. $loadData[0]['country'];

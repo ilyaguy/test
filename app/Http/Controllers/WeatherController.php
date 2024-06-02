@@ -19,6 +19,7 @@ class WeatherController extends Controller
         if (empty($location)) {
             return false;
         }
+
         $weather = new Weather();
         $row = $weather->loadMap(new OpenWeatherMap(),
                                 $location);
