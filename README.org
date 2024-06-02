@@ -1,5 +1,10 @@
-* Documentation [66%] [6/9] 
-** INPROGRESS Step by step working process
+* Documentation [100%] [9/9] 
+** DONE Step by step working process
+CLOSED: [2024-06-03 Mon 00:34]
+- CLOSING NOTE [2024-06-03 Mon 00:34] \\
+  Code coverage 64% lines.
+  
+  Code coverage 64% lines.
 ** DONE Simple interface enough to work and test
 CLOSED: [2024-05-14 Tue 23:30]
 - Used opensource code, but need to pay for data.
@@ -19,7 +24,8 @@ CLOSED: [2024-05-14 Tue 23:21]
 CLOSED: [2024-05-14 Tue 23:31]
 - CLOSING NOTE [2024-05-14 Tue 23:31] \\
   I hope
-** TODO Use transactions in the DB
+** DONE Use transactions in the DB
+CLOSED: [2024-06-03 Mon 00:36]
 ** DONE Log messages (info + error)
 CLOSED: [2024-05-14 Tue 22:51]
 ** DONE Description for finished and unfinished tasks
@@ -35,7 +41,10 @@ CLOSED: [2024-05-14 Tue 23:25]
    2) create account on https://home.openweathermap.org/api_keys
    3) put API key for authorization in to `.env` and related variable name:
 4. Run (project and tests)
-** INPROGRESS 60+% test coverage
+** DONE 60+% test coverage
+CLOSED: [2024-06-03 Mon 00:36]
+- CLOSING NOTE [2024-06-03 Mon 00:36] \\
+  Done. Coverage about 61%
 *  Weather data project [100%]
 ** DONE Init Laravel
 CLOSED: [2024-05-16 Tue 16:11]
