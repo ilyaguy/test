@@ -16,10 +16,12 @@ class WeatherController extends Controller
     public function index()
     {
         $location = Location::first();
-        $map = new Weather();
-        $row = $map->loadMap(new OpenWeatherMap(), $location);
-
-        Log::debug(__METHOD__, [$row, $location]);
+        if (empty($location)) {
+            return false;
+        }
+        $weather = new Weather();
+        $row = $weather->loadMap(new OpenWeatherMap(),
+                                $location);
         if (!$row) {
             return null;
         }

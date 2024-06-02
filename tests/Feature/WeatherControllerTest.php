@@ -13,9 +13,7 @@ class WeatherControllerTest extends TestCase
 
     public function test_weather_empty_request(): void
     {
-        $v = new WeatherController();
-        $x = $v->index();
-        $this->assertEquals('', $x);
+        $this->assertEquals(null, (new WeatherController())->index());
     }
 
     public function test_weather_with_full_data(): void
