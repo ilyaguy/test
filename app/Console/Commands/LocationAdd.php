@@ -29,6 +29,7 @@ class LocationAdd extends Command
     public function handle()
     {
         $location = new Location();
-        $location->create($this->argument('location'));
+        $location->create(new OpenWeatherMap(), $this->argument('location'))
+            ->save();
     }
 }

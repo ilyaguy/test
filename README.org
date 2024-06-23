@@ -1,3 +1,51 @@
+* DONE Weather data project [100%]
+** DONE Init Laravel
+CLOSED: [2024-05-16 Tue 16:11]
+- PHP v8.3.7
+- Laravel v11.7.0
+- MySQL
+- Docker
+** DONE [3/3] Configure Docker
+Finish installation and configuration.
+*** DONE Installation run
+Initialisate the PHP and all tools to virtual machine.
+#+BEGIN_SRC shell
+docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v "$(pwd):/var/www/html" \
+    -w /var/www/html \
+    laravelsail/php83-composer:latest \
+    composer install --ignore-platform-reqs
+#+END_SRC
+*** DONE 
+Configure server
+- Copy `.env.example` to `.env` in project directory
+- Edit `.env` configuration file:
+  - Create application id
+    #+begin_src shell
+    ./vendor/bin/sail artisan key:generate
+    #+end_src
+  - Database config:
+    #+begin_src php
+    DB_CONNECTION=mysql
+    DB_HOST=mysql
+    DB_PORT=3306
+    DB_DATABASE=laravel
+    DB_USERNAME=root
+    DB_PASSWORD=
+    #+end_src
+  - Configure `OWM_APPIDA` to alllow work with
+    `https://home.openweathermap.org/api_keys`
+    #+BEGIN_SRC php
+    OWM_APPIDA=
+    OWM_URL=https://api.openweathermap.org/
+    #+END_SRC
+
+*** DONE Run
+Run environment.
+#+BEGIN_SRC shell
+docker-compose up -d
+#+END_SRC
 * Documentation [100%] [9/9] 
 ** DONE Step by step working process
 CLOSED: [2024-06-03 Mon 00:34]
@@ -45,10 +93,3 @@ CLOSED: [2024-05-14 Tue 23:25]
 CLOSED: [2024-06-03 Mon 00:36]
 - CLOSING NOTE [2024-06-03 Mon 00:36] \\
   Done. Coverage about 61%
-*  Weather data project [100%]
-** DONE Init Laravel
-CLOSED: [2024-05-16 Tue 16:11]
-- PHP v8.3.7
-- Laravel v11.7.0
-- MySQL
-- Docker
